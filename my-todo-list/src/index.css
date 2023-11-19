@@ -1,11 +1,24 @@
-/* styles.css */
-@import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@600&family=Changa:wght@200&family=Exo+2:ital,wght@1,700&family=Mooli&family=MuseoModerno:wght@300&family=New+Tegomin&family=Sigmar&family=Teko:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Kdam+Thmor+Pro&family=Russo+One&display=swap');
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f5f5f5;
 }
-
+.todo-title{
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  border: solid 2px;
+  text-align: center;
+  color: #63127e;
+  background-color: #2f80ed;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.todo-title:hover{
+  background-color: #3498db;
+  transform: scale(1.03);
+  cursor: pointer;
+}
 .TodoWrapper {
   max-width: 400px;
   margin: 20px auto;
@@ -14,22 +27,23 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: solid 2px #3498db;
+  margin-top: 20px;
 
 }
 
 .TodoWrapper.dark-mode {
   background: #2c3e50;
-  color: #05071a;
+  color: #000105;
 }
 .TodoWrapper.light-mode {
   background: linear-gradient(to right, #74ebd5, #ACB6E5);
-  color: #000; /* Adjust the text color for light mode */
+  color: #000; 
 }
 
 
 .dark-mode-btn {
   background-color: #3498db;
-  color: #fff;
+  color: #efecec;
   border: solid 2px #2980b9;
   padding: 10px;
   border-radius: 5px;
@@ -89,6 +103,7 @@ body {
   position: relative;
   transition: background-color 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: rgb(185, 141, 111);
 }
 
 .Todo.completed {
@@ -99,9 +114,11 @@ body {
 
 .Todo p {
   margin: 0;
-  font-size: 18px;
+  font-size: 15px;
   cursor: pointer;
-  font-family: 'Changa', sans-serif;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  color: rgb(218, 150, 24);
+
 
 }
 
@@ -198,26 +215,141 @@ body {
   border-radius: 7px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-/* styles.css */
 
-/* ... existing styles */
 
 .low-priority {
-  background-color: #d4edda; /* Green background for low priority */
+  background-color: #0a4318; 
 }
 
 .medium-priority {
-  background-color: #fff3cd; /* Yellow background for medium priority */
+  background-color: #e1b217; 
 }
 
 .high-priority {
-  background-color: #f8d7da; /* Red background for high priority */
+  background-color: #690713; 
 }
 
-/* ... rest of your CSS styles */
 .todo-heading {
   font-family: 'MuseoModerno', sans-serif;
-  font-size: 24px; /* Adjust font size as needed */
-  font-weight: 700; /* Adjust font weight as needed */
-  color: #f3e2e2; /* Adjust text color as needed */
+  font-size: 24px; 
+  font-weight: 700; 
+  color: #f3e2e2; 
+}
+
+
+.homepage {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #DD2167;
+  background: linear-gradient(0deg, #DD2167, #535DAC);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; 
+  color: #fff; 
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  color: #333; 
+}
+
+.contact-form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form textarea {
+  resize: vertical; 
+}
+
+.contact-form button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #2980b9;
+}
+.navbar {
+ 
+  background: #2B0AD8;
+  background: linear-gradient(0deg, #2B0AD8, #5C292E);
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Gloria Hallelujah', cursive;
+
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  border: solid;
+  padding: 7px 7px;
+  margin-right: 20px;
+  font-family: 'Gloria Hallelujah', cursive;
+
+}
+
+.nav-links li a:hover {
+  color: #e7181f; 
+  background-color: rgb(209, 227, 209);
+  transform: scale(1.1);
+}
+#contactus {
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  word-spacing: 5px;
+}
+.naeemtodo{
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 20px;
+  text-decoration: underline;
+
+}
+.todoabout{
+  font-family: 'Gloria Hallelujah', cursive;
+
+}
+.last-about{
+  font-family: 'Gloria Hallelujah', cursive;
+
+}
+.lastp{
+  font-family: 'Kdam Thmor Pro', sans-serif;
+
 }

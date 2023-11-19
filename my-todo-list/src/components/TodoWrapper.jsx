@@ -1,4 +1,3 @@
-// TodoWrapper.js
 import React, { useState, useEffect } from 'react';
 import Todo from './Todo';
 import TodoForm from './TodoForm';
@@ -9,13 +8,11 @@ const TodoWrapper = () => {
   const [todos, setTodos] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
 
-  // Load todos from local storage on component mount
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem('todos')) || [];
     setTodos(storedTodos);
   }, []);
 
-  // Save todos to local storage whenever todos change
   const saveTodos = (newTodos) => {
     setTodos(newTodos);
     localStorage.setItem('todos', JSON.stringify(newTodos));
@@ -59,7 +56,7 @@ const TodoWrapper = () => {
 
   return (
     <div className={`TodoWrapper ${darkMode ? 'dark-mode' : ''}`}>
-      <h1>My Task Planner</h1>
+      <h1 className='todo-title'>My Task Planner</h1>
       <button onClick={toggleDarkMode} className="dark-mode-btn">
         {darkMode ? 'Light Mode' : 'Dark Mode'}
       </button>
