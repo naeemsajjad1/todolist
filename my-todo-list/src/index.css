@@ -1,0 +1,223 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@600&family=Changa:wght@200&family=Exo+2:ital,wght@1,700&family=Mooli&family=MuseoModerno:wght@300&family=New+Tegomin&family=Sigmar&family=Teko:wght@300;500&display=swap');
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.TodoWrapper {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background: linear-gradient(to right, #56ccf2, #2f80ed);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: solid 2px #3498db;
+
+}
+
+.TodoWrapper.dark-mode {
+  background: #2c3e50;
+  color: #05071a;
+}
+.TodoWrapper.light-mode {
+  background: linear-gradient(to right, #74ebd5, #ACB6E5);
+  color: #000; /* Adjust the text color for light mode */
+}
+
+
+.dark-mode-btn {
+  background-color: #3498db;
+  color: #fff;
+  border: solid 2px #2980b9;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.dark-mode-btn:hover{
+  background-color: green;
+  
+}
+
+.TodoForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #3498db;
+  border-radius: 4px;
+  color: #333;
+}
+
+.todo-input::placeholder {
+  color: #aaa;
+}
+
+.todo-btn {
+  background-color: #3498db;
+  color: #fff;
+  border: solid 2px #2980b9;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.todo-btn:hover {
+  background-color: #2980b9;
+  transform: scale(1.1);
+  border: solid #3498db 2px;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+.Todo {
+  display: flex;
+  flex-direction: column;
+  background: #ecf0f1;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  position: relative;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Todo.completed {
+  text-decoration: line-through;
+  color: #e06e1d;
+  
+}
+
+.Todo p {
+  margin: 0;
+  font-size: 18px;
+  cursor: pointer;
+  font-family: 'Changa', sans-serif;
+
+}
+
+.Todo p .due-date {
+  font-size: 14px;
+  color: #e74c3c;
+  margin-left: 10px;
+  
+
+}
+
+.Todo div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.faPenToSquare,
+.faTrash {
+  font-size: 20px;
+  cursor: pointer;
+  color: #3498db;
+  border: 1px solid transparent;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.faTrash:hover {
+  color: #e74c3c;
+  border-color: #e74c3c;
+}
+
+.faPenToSquare:hover {
+  color: #2980b9;
+  border-color: #2980b9;
+}
+
+.EditTodoForm {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-bottom: 20px;
+}
+
+.edit-todo-input {
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #3498db;
+  border-radius: 5px;
+  color: #333;
+}
+
+.edit-todo-btn,
+.delete-todo-btn {
+  background-color: #f39c12;
+  color: #fff;
+  border: 1px solid transparent;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-todo-btn:hover,
+.delete-todo-btn:hover {
+  background-color: #d35400;
+  border-color: #d35400;
+  transform: scale(1.1);
+}
+
+.delete-todo-btn {
+  background-color: #e74c3c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.delete-todo-btn:hover {
+  background-color: #c0392b;
+}
+.priority-select {
+  padding: 5px;
+  margin-bottom: 7px;
+  font-size: 15px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+
+}
+.todo-input[type="date"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* styles.css */
+
+/* ... existing styles */
+
+.low-priority {
+  background-color: #d4edda; /* Green background for low priority */
+}
+
+.medium-priority {
+  background-color: #fff3cd; /* Yellow background for medium priority */
+}
+
+.high-priority {
+  background-color: #f8d7da; /* Red background for high priority */
+}
+
+/* ... rest of your CSS styles */
+.todo-heading {
+  font-family: 'MuseoModerno', sans-serif;
+  font-size: 24px; /* Adjust font size as needed */
+  font-weight: 700; /* Adjust font weight as needed */
+  color: #f3e2e2; /* Adjust text color as needed */
+}
