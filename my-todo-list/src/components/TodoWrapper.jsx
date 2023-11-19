@@ -1,5 +1,5 @@
 // TodoWrapper.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Todo from './Todo';
 import TodoForm from './TodoForm';
 import EditTodoForm from './EditTodoForm';
@@ -9,43 +9,52 @@ const TodoWrapper = () => {
   const [todos, setTodos] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
 
-  const addTodo = (task, priority, dueDate) => {
-    setTodos([
-      ...todos,
-      { id: uuidv4(), task, completed: false, isRead: false, priority, dueDate },
-    ]);
+  // Load todos from local storage on component mount
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem('todos')) || [];
+    setTodos(storedTodos);
+  }, []);
+
+  // Save todos to local storage whenever todos change
+  const saveTodos = (newTodos) => {
+    setTodos(newTodos);
+    localStorage.setItem('todos', JSON.stringify(newTodos));
+  };
+
+  const addTodo = ({ task, priority, dueDate }) => {
+    const newTodo = { id: uuidv4(), task, completed: false, isRead: false, priority, dueDate };
+    const updatedTodos = [...todos, newTodo];
+    saveTodos(updatedTodos);
   };
 
   const toggleComplete = (id) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
     );
+    saveTodos(updatedTodos);
   };
 
   const deleteTodo = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
+    saveTodos(updatedTodos);
   };
 
   const editTodo = (id) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo
-      )
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo
     );
+    saveTodos(updatedTodos);
   };
 
   const editTask = (task, id) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, task, isEditing: !todo.isEditing } : todo
-      )
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, task, isEditing: !todo.isEditing } : todo
     );
+    saveTodos(updatedTodos);
   };
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode((prevDarkMode) => !prevDarkMode);
   };
 
   return (

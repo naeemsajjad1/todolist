@@ -1,4 +1,3 @@
-// EditTodoForm.js
 import React, { useState } from 'react';
 
 const EditTodoForm = ({ editTodo, task }) => {

@@ -1,4 +1,3 @@
-// TodoForm.js
 import React, { useState } from 'react';
 
 const TodoForm = ({ addTodo }) => {
@@ -8,7 +7,7 @@ const TodoForm = ({ addTodo }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTodo(task, priority, dueDate);
+    addTodo({ task, priority, dueDate });
     setTask('');
     setPriority('Normal');
     setDueDate('');
