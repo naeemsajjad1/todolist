@@ -353,3 +353,85 @@ body {
   font-family: 'Kdam Thmor Pro', sans-serif;
 
 }
+
+.desktop-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #2B0AD8; 
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+  color: #fff; 
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.mobile-navbar {
+  display: none;
+  flex-direction: column;
+  background-color: #2B0AD8; 
+  color: #fff; 
+  padding: 20px;
+  position: absolute;
+  top: 60px; 
+  left: 0;
+  right: 0;
+}
+
+
+.mobile-navbar a {
+  color: #fff; 
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px;
+  font-size: 18px; 
+  border: solid 1px;
+}
+.mobile-navbar a:hover {
+  background-color: #3498db; 
+  border-radius: 5px;
+}
+
+
+@media only screen and (max-width: 700px) {
+  .desktop-navbar {
+    display: flex;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .mobile-navbar.visible {
+    display: flex;
+    
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
