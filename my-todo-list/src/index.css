@@ -12,7 +12,7 @@ body {
   color: #63127e;
   background-color: #2f80ed;
   padding: 5px 10px;
-  border-radius: 10px;
+  border-radius: 9px;
 }
 .todo-title:hover{
   background-color: #3498db;
